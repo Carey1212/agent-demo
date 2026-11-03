@@ -12,3 +12,164 @@ db:
   pool_timeout: 30        # 池中无连接时的等待时间
   pool_recycle: 1800      # 连接回收时间（秒）
   echo: True               # 控制台输出 SQL
+
+jwt:
+  private_key: "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAKIIk0LxLhUHchzhJ8A607DYSeAgSrPSS5GPdh8vDJshIkgK9YBxEBcqv5km/xyHgpE45FsyQSB5/fXph/ywwgNumYTZUUyt3yi+ygvfZyvpwo4Cz6Jzwp5M2doiG7lKryv0MbIsM3Rs5KU0BOAsMiVVt5LdeM3SSb1lHaQj5zdNAgMBAAECgYACCmxoYTpv8110wnUwtTNc79LTKs6MczwwA7si62gtb/5kvLAydobgWjgT74TMN2MY/YfXijHkMDhXNFWNHi2WiyScGaN3+YesxFUoG5H/2hQAUcDzj1Rryh+gerkWdqoFbGu3d+v5kur+w36VTCD3qpHyADycM//UA7yKb+8i4QJBANQyPNwOUJabDlLjTd42GzvAZTE6gmPrOopsRnHW8TVIHkHXexCMQLQ4TTg6Ct5ShuSTAgYUGPQv3jxpLts+fcUCQQDDe22AtsqnKVaG2KYVYWFLnI3hYNw8wePepZbt/87MPgYtkEc5WjFF/QUlHwLcpc7YW6hrJYwMbZvOB7YVHrPpAkAlbQLs8R1nosuA9RRb2AEvpbxzVVWAGBIILhayp219r02e4UmUXphe8Ps1qo8WLUobcI5P0iWgk/zHfOnFw5zdAkEAh2o+PfbiRZAeT4VO7+qocq99nY3yougRiU+eUTpusA+bSf7zR+iRz5Dp+oAUBHOb6Ub9UVQOQyG+16eB2/mL2QJBAIMjhAu5kTZAWVDpuJ6AtDodscuZQs8EOCdU7hx+aJUMC4K1aeuwD9QhkOZtpA/V2BzgNcqWt5dfntU2ovQ0g1U="
+  public_key: "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCiCJNC8S4VB3Ic4SfAOtOw2EngIEqz0kuRj3YfLwybISJICvWAcRAXKr+ZJv8ch4KROORbMkEgef316Yf8sMIDbpmE2VFMrd8ovsoL32cr6cKOAs+ic8KeTNnaIhu5Sq8r9DGyLDN0bOSlNATgLDIlVbeS3XjN0km9ZR2kI+c3TQIDAQAB"
+  expire_hours: 720 #token有效期，单位小时
+
+ai:
+  "1001":
+    session:
+      title: Hello，我是天机AI助理
+      describe: 我是由天机学堂倾力打造的智能助理，我不仅能推荐课程、答疑解惑，还能为您激发创意、畅聊心事。
+      examples:
+        - title: "课程推荐"
+          describe: "能帮我推荐一个合适的课吗？"
+        - title: "课程推荐"
+          describe: "最近有什么新课吗？"
+        - title: "课程推荐"
+          describe: "如何选择适合我的课程？"
+        - title: "课程推荐"
+          describe: "有哪些热门课程推荐？"
+        - title: "课程购买"
+          describe: "我想要购买《Java进阶编程实战》"
+        - title: "课程购买"
+          describe: "我想要报名《Java高级架构与微服务》"
+        - title: "课程购买"
+          describe: "《Java进阶编程实战》的课程价格是多少？"
+        - title: "课程购买"
+          describe: "《Java高级架构与微服务》的课程价格是多少？"
+        - title: "课程介绍"
+          describe: "请帮我介绍一下《互联网产品运营实战》"
+        - title: "课程介绍"
+          describe: "《Java大数据处理与分析》这门课一共有多少节？"
+        - title: "课程介绍"
+          describe: "《Java高级架构与微服务》能学到什么内容？"
+        - title: "课程介绍"
+          describe: "《互联网产品运营实战》适合我学习吗？"
+        - title: "知识讲解"
+          describe: "面向对象的三大特征是什么？"
+        - title: "知识讲解"
+          describe: "ArrayList和LinkedList有何区别？"
+        - title: "知识讲解"
+          describe: "Java多线程怎么实现？"
+        - title: "知识讲解"
+          describe: "Spring Boot和SSM有什么区别？"
+        - title: "知识讲解"
+          describe: "列表和元组有什么区别？"
+        - title: "知识讲解"
+          describe: " Python如何管理内存？"
+        - title: "知识讲解"
+          describe: " 装饰器的作用是什么？"
+        - title: "知识讲解"
+          describe: "多线程为什么有GIL限制？"
+  "1003":
+    session:
+      title: Hello，我是天机AI助理
+      describe: 我是由天机学堂倾力打造的智能助理，我不仅能推荐课程、答疑解惑，还能为您激发创意、畅聊心事。
+      examples:
+        - title: "课程推荐"
+          describe: "能帮我推荐一个合适的课吗？"
+        - title: "课程推荐"
+          describe: "最近有什么新课吗？"
+        - title: "课程推荐"
+          describe: "如何选择适合我的课程？"
+        - title: "课程推荐"
+          describe: "有哪些热门课程推荐？"
+        - title: "课程购买"
+          describe: "我想要购买《Java进阶编程实战》"
+        - title: "课程购买"
+          describe: "我想要报名《Java高级架构与微服务》"
+        - title: "课程购买"
+          describe: "《Java进阶编程实战》的课程价格是多少？"
+        - title: "课程购买"
+          describe: "《Java高级架构与微服务》的课程价格是多少？"
+        - title: "课程介绍"
+          describe: "请帮我介绍一下《互联网产品运营实战》"
+        - title: "课程介绍"
+          describe: "《Java大数据处理与分析》这门课一共有多少节？"
+        - title: "课程介绍"
+          describe: "《Java高级架构与微服务》能学到什么内容？"
+        - title: "课程介绍"
+          describe: "《互联网产品运营实战》适合我学习吗？"
+        - title: "知识讲解"
+          describe: "面向对象的三大特征是什么？"
+        - title: "知识讲解"
+          describe: "ArrayList和LinkedList有何区别？"
+        - title: "知识讲解"
+          describe: "Java多线程怎么实现？"
+        - title: "知识讲解"
+          describe: "Spring Boot和SSM有什么区别？"
+        - title: "知识讲解"
+          describe: "列表和元组有什么区别？"
+        - title: "知识讲解"
+          describe: " Python如何管理内存？"
+        - title: "知识讲解"
+          describe: " 装饰器的作用是什么？"
+        - title: "知识讲解"
+          describe: "多线程为什么有GIL限制？"
+  openai:
+    model: deepseek-v4-flash
+    api-key: sk-2c1e67f91d6e46578889f605639ec94f
+    base-url: https://api.deepseek.com
+    temperature: 0.8
+    timeout: 30
+
+  agent:
+    checkpointer:
+      postgres:
+        min: 5 # 最小连接数
+        max: 10 # 最大连接数
+        url: "postgresql://postgres:itheima123@192.168.150.101:5432/postgres?sslmode=disable"
+
+redis:
+  host: 192.168.150.101
+  port: 6379
+  password: 123321
+
+nacos:
+  server-addr: 192.168.150.101:8848 # nacos注册中心
+  username: nacos
+  password: nacos
+  config:
+    namespace: public
+    group: DEFAULT_GROUP
+  discovery:
+    name: agent-center
+    namespace: f923fb34-cb0a-4c06-8fca-ad61ea61a3f0
+    ip: 192.168.150.1
+
+prompt:
+  route:
+    chat:
+      data-id: route-agent-system-message.txt
+  recommend:
+    chat:
+      data-id: recommend-agent-system-message.txt
+  buy:
+    chat:
+      data-id: buy-agent-system-message.txt
+  consult:
+    chat:
+      data-id: consult-agent-system-message.txt
+  knowledge:
+    chat:
+      data-id: knowledge-agent-system-message.txt
+  unknown:
+    chat:
+      data-id: unknown-agent-system-message.txt
+  text:
+    chat:
+      data-id: text-system-chat-message.txt
+  a2a:
+    chat:
+      data-id: a2a-agent-system-message.txt
+
+a2a:
+  servers:
+    - http://127.0.0.1:3601/
+    - http://127.0.0.1:3602/
+    - http://127.0.0.1:3603/
+    - http://127.0.0.1:3604/
+    - http://127.0.0.1:3605/

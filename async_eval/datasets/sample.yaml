@@ -1,0 +1,53 @@
+# 评测用例示例（可自行扩充）。字段说明见 async_eval/core/types.py 的 EvalCase。
+cases:
+  # ---- 意图路由（agent 1001）----
+  - case_id: intent_recommend_01
+    question: 我今年20岁，本科学历，想系统学Java，有什么合适的课程推荐吗？
+    expected_intent: RECOMMEND
+    tags: [route]
+
+  - case_id: intent_buy_01
+    question: 我要购买《Java进阶编程实战》
+    expected_intent: BUY
+    expected_tools: [PrePlaceOrder]
+    tags: [route, tool]
+
+  - case_id: intent_consult_01
+    question: 《Java进阶编程实战》多少钱？
+    expected_intent: CONSULT
+    tags: [route]
+
+  - case_id: intent_knowledge_01
+    question: ArrayList和LinkedList有什么区别？
+    expected_intent: KNOWLEDGE
+    expected_points: [底层数据结构, 查询性能, 增删性能]
+    tags: [route]
+
+  - case_id: intent_unknown_01
+    question: 你好呀
+    expected_intent: UNKNOWN
+    tags: [route]
+
+  # ---- 工具正确性（课程信息不能编造）----
+  - case_id: consult_course_01
+    question: 请介绍一下《互联网产品运营实战》这门课一共多少节？
+    expected_intent: CONSULT
+    expected_tools: [courseInfo]
+    expected_points: [节数]
+    tags: [tool, anti_hallucination]
+
+  # ---- 多轮对话 ----
+  - case_id: multi_recommend_01
+    question: 帮我推荐一门适合初学者的人工智能课程
+    expected_intent: RECOMMEND
+    turns:
+      - 第一门课大概要学多久？
+      - 有免费的试听吗？
+    tags: [multi_turn]
+
+  # ---- 文本生成（agent 1002）----
+  - case_id: text_explain_01
+    agent_id: 1002
+    question: 用通俗的话解释一下什么是面向对象编程
+    expected_points: [封装, 继承, 多态]
+    tags: [text]

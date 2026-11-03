@@ -1,0 +1,18 @@
+# 评测运行配置（可选覆盖）。留空回退默认。
+mode: inprocess            # inprocess | http
+agent_id: 1001
+concurrency: 5
+timeout: 120
+max_turns: 4
+base_url: "http://127.0.0.1:18089"
+user_token: ""
+
+judge: true
+judge_provider: openai
+judge_model: null          # null = 复用 ai.openai.model (deepseek)
+judge_temperature: 0.0
+judge_concurrency: 3
+pass_threshold: 3.5
+
+run_dir: "async_eval/reports"
+datasets: []               # 空 = datasets/*.yaml 全部

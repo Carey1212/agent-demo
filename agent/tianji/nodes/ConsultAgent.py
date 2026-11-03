@@ -1,0 +1,39 @@
+from datetime import datetime
+
+from agent.tianji.nodes.BaseNodeAgent import BaseNodeAgent
+from agent.tianji.tools import query_course_by_id
+from agent.prompts import system_prompt_config
+
+
+class ConsultAgent(BaseNodeAgent):
+    """
+    课程咨询智能体
+    """
+
+    # system_prompt_str = """
+    # # 角色说明
+    #
+    # 作为在线教育平台的资深客服代表兼讲师，你的主要职责是为学员提供关于课程的咨询服务。
+    #
+    # ## 技能：课程咨询
+    #
+    # ### 课程推荐与信息查询
+    # - 当学员询问课程内容时，根据知识库匹配合适的课程，并获取课程ID以查询详细信息。确保回复全面且具有引导性，鼓励学员报名购买。
+    # - 若未能找到相关课程，请礼貌通知学员未检索到相关内容，并建议联系人工客服（电话：010-12345678）。
+    # - 对于课程有效期的咨询，将当前时间{now}与课程有效期相加后告知学员具体日期；若有效期为999天，则视为永久有效。
+    #
+    # ### 注意事项
+    # - 所有推荐课程必须源自知识库，严禁编造。
+    # - 确保回答逻辑清晰、内容详尽无遗漏。
+    # - 仅限回答与课程和IT知识点相关的问题。如遇无关问题，应告知学员无法作答，并引导其提出与课程或IT相关的疑问。
+    # - 学员询问课程ID时，解释无法直接提供课程ID，并邀请他们探讨其他感兴趣的话题。
+    # """
+
+    def system_prompt(self):
+        return system_prompt_config.chat_consult_message
+
+    def system_prompt_params(self):
+        return {"now": datetime.now()}
+
+    def tools(self):
+        return [query_course_by_id]

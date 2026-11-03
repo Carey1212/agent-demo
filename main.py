@@ -20,7 +20,7 @@ async def start_web():
     # 创建 uvicorn 配置
     config = uvicorn.Config(
         app,            # FastAPI 应用
-        host=host,      # 绑定主机
+        host=host,      # 绑定主 机
         port=port,      # 绑定端口
         log_level="info",  # 日志等级
         access_log=False,  # 关闭访问日志
